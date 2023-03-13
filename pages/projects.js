@@ -53,19 +53,9 @@ export async function getStaticProps() {
       page_size: 100
     })
   };
-
-  try {
-    const response = await fetch(`https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`, options);
-    const projects = await response.json();
-
-    return {
-      props: { projects }, // will be passed to the page component as props
-    }
-    
-  } catch (error) {
-    console.log('There was an error => ', error);
-  }
   
+  const response = await fetch(`https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`, options);
+  const projects = await response.json();
   // console.log(projects);
 
   // const projectNames = projects.results.map((project) => (
@@ -73,5 +63,7 @@ export async function getStaticProps() {
   // ))
 
 
-  
+  return {
+    props: { projects }, // will be passed to the page component as props
+  }
 }
