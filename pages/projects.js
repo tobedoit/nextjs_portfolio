@@ -35,7 +35,7 @@ export default function Projects({ projects }) {
 
 // https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
 // 요청할 때 마다 호출!
-export async function  getServerSideProps({ req, res }) {
+export async function getServerSideProps({ req, res }) {
 
   // https://developers.notion.com/reference/post-database-query
   // Notion post database query
