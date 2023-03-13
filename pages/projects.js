@@ -32,7 +32,10 @@ export default function Projects({ projects }) {
 // https://nextjs.org/docs/basic-features/data-fetching/get-static-props
 // 빌드타임 때 호출! (서버에서 핸들링)
 // export async function getStaticProps() {
-export async function  getServerSideProps() {
+
+// https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
+// 요청할 때 마다 호출!
+export async function  getServerSideProps({ req, res }) {
 
   // https://developers.notion.com/reference/post-database-query
   // Notion post database query
@@ -63,6 +66,11 @@ export async function  getServerSideProps() {
   //   project.properties.Name.title[0].plain_text
   // ))
 
+  // https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
 
   return {
     props: { projects }, // will be passed to the page component as props
