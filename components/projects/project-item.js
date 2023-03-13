@@ -32,8 +32,8 @@ export default function ProjectItem({ data }) {
         alt="cover image"
         width="400"
         height="300"
-        layout="responsive"
-        objectFit="cover"
+        // layout="responsive"
+        // objectFit="cover"
         quality={100}
       />
       <div className='p-4 flex flex-col'>
