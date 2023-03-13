@@ -31,7 +31,8 @@ export default function Projects({ projects }) {
 
 // https://nextjs.org/docs/basic-features/data-fetching/get-static-props
 // 빌드타임 때 호출! (서버에서 핸들링)
-export async function getStaticProps() {
+// export async function getStaticProps() {
+export async function  getServerSideProps() {
 
   // https://developers.notion.com/reference/post-database-query
   // Notion post database query
