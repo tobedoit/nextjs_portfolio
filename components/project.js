@@ -46,7 +46,7 @@ export default function Project({ data }) {
         </p>
 
         <div className='flex items-start flex-wrap mt-2'>
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <p className='px-2 py-1 mr-2 mb-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30' key={tag.id}>{tag.name}</p>
           ))}
         </div>
