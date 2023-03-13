@@ -1,7 +1,8 @@
 // https://www.youtube.com/watch?v=KvoFvmu5eRo
 import Head from 'next/head'
 import Layout from "@/components/layout"
-import ProjectItem from '@/components/projects/project-item';
+// import ProjectItem from '@/components/projects/project-item';
+import Project from '@/components/project';
 
 export default function Projects({ projects }) {
   return (
@@ -19,7 +20,7 @@ export default function Projects({ projects }) {
           </h1>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xs:w-full py-10 xs:m-6 m-2'>
             {projects.results.map((project) => (
-              <ProjectItem data={project} key={project.id} />
+              <Project data={project} key={project.id} />
             ))}
           </div>
         </div>
