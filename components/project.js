@@ -6,7 +6,7 @@ export default function Project({ data }) {
   const github = data.properties.Github.url;
   const homepage = data.properties.Homepage.url;
   const description = data.properties.Description.rich_text[0].plain_text;
-  const imgSrc = data.cover.external.url;
+  const imgSrc = data.cover.file?.url || data.cover.external.url;
   const tags = data.properties.Tags.multi_select;
   const start = data.properties.WorkPeriod.date.start;
   const end = data.properties.WorkPeriod.date.end;
